@@ -1,27 +1,72 @@
 import pacientes
 
+
 def registrar_consulta (lista_pacientes, usuario_actual):
-    identificacion_paciente = input("\nDigite el ID del paciente: \n")
-    existe = pacientes.buscar_paciente(lista_pacientes,identificacion_paciente)
-    if existe is not None:
-        print (existe["Nombre"])
-        while True:
-            sintomas = input("Digite los sintomas del paciente:\n\n").strip()
-            if sintomas == "": 
-                print ("No puede dejar esta sección vacia.")
-                continue
-            else: 
-                break
-        while True:  
-            diagnostico = input("\nDigite el diagnósticos del paciente \n\n").strip()
-            if diagnostico.isspace():
-                print ("No puede dejar esta sección vacia.")
-                continue
-            else:
-                break
+    verificacion_operario = usuario_actual["Tipo operario"]
+    if verificacion_operario == "Medico": 
+        identificacion_paciente = input("\nDigite el ID del paciente: \n")
+        existe = pacientes.buscar_paciente(lista_pacientes,identificacion_paciente)
+        if existe is not None:
+            print (existe["Nombre"])
+            while True:
+                sintomas = input("Digite los sintomas del paciente:\n\n").strip()
+                if sintomas == "": 
+                    print ("No puede dejar esta sección vacia.")
+                    continue
+                else: 
+                    break
+            while True:  
+                diagnostico = input("\nDigite el diagnósticos del paciente \n\n").strip()
+                if diagnostico == "":
+                    print ("No puede dejar esta sección vacia.")
+                    continue
+                else:
+                    break
+            medicamentos = []
+            while True:
+                medicamentos.append(crear_medicamento())
+                while True:
+                    decision = input ("Hay que recetar otro medicamento? SI/NO").lower().strip()
+
+                    if decision == "si" or decision == "no":
+                        break
+                    else:
+                        print("Responda Si o No")
+                        continue
+                if decision == "si":
+                    continue
+                else: 
+                    break
+            while True:
+                fecha = input("Ingrese la fecha de la consulta(DD/MM/AAAA):").strip()
+
+                if fecha == "":
+                    print ("No puede dejar esta seccion vacia")
+                    continue
+                else:
+                    break
+
+            nombre_medico = usuario_actual["Nombre"] + " " + usuario_actual["Apellido"]
+
+            consulta_creada = {
+                "Fecha":fecha,
+                "ID paciente":identificacion_paciente,
+                "Nombre medico": nombre_medico,
+                "Email medico": usuario_actual["Email"],
+                "Sintomas":sintomas,
+                "Diagnostico":diagnostico,
+                "Medicamentos":medicamentos}
+
+            return consulta_creada
+        else: 
+            print ("El paciente no esta registrado.")
+            return
+
     else: 
-        print ("El paciente no esta registrado.")
+        print("Solo medicos pueden registrar consultas")
         return
+
+
 
 def crear_medicamento ():
     while True:
@@ -47,7 +92,7 @@ def crear_medicamento ():
     while True: 
         dosis = input("Digite la dosis a recomendar: ").strip()
 
-        if dosis == ""
+        if dosis == "":
             print("No puede dejar esta seccion vacia")
             continue
         else: 

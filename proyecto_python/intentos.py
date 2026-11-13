@@ -1,6 +1,7 @@
 import json 
 lugar_pacientes = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/" + "pacientesguardados.json"
 lugar_operarios = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/" + "operariosguardado.json"
+lugar_consultas = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/" + "consultasguardads.json"
 
 def guarda_datos (datos, ruta):
     
@@ -16,4 +17,5 @@ def cargar (ruta):
         lista_pacientes = []
 
     return lista_pacientes    
+
 
