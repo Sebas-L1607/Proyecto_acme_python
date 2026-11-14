@@ -1,7 +1,8 @@
 import json 
-lugar_pacientes = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/" + "pacientesguardados.json"
-lugar_operarios = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/" + "operariosguardado.json"
-lugar_consultas = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/" + "consultasguardads.json"
+lugar_pc = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/"
+lugar_pacientes =  lugar_pc + "pacientesguardados.json"
+lugar_operarios = lugar_pc + "operariosguardado.json"
+lugar_consultas = lugar_pc + "consultasguardads.json"
 
 def guarda_datos (datos, ruta):
     

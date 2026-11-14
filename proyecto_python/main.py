@@ -1,7 +1,23 @@
 import login
 import intentos
 import menu 
+import operarios
 
+datos_admin = {
+        "Tipo operario" : "Administrador",
+        "ID operario" : "0000",
+        "Nombre": "Admin",
+        "Apellido" : "Administrador", 
+        "Telefono" : "555 000111",
+        "Email" : "admin@acmeclinic.com", 
+        "Contraseña" : "123456",
+        "Direccion" : "Cl 185 # 26 - 85"}
+
+lista_admin = intentos.cargar(intentos.lugar_operarios)
+
+if len(lista_admin) == 0:
+    lista_admin.append(datos_admin)
+    intentos.guarda_datos(lista_admin,intentos.lugar_operarios)
 
 
 while True: 

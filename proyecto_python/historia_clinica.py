@@ -14,6 +14,7 @@ def mostrar_clinica (lista_pacientes, lista_consultas):
         numero_consultas = 0
         for historia in lista_consultas: 
             if historia["ID paciente"] == identificacion: 
+                print()
                 print ("Fecha: ", historia["Fecha"])
                 print ("Nombre medico: ", historia["Nombre medico"])
                 print ("Sintomas: ", historia["Sintomas"])
@@ -22,7 +23,6 @@ def mostrar_clinica (lista_pacientes, lista_consultas):
 
                 print("Medicamentos Prescritos")
                 for prescritos in historia["Medicamentos"]:
-                    print ("Medicamentos prescritos")
                     print ("Medicamento: ", prescritos["Medicamento"])
                     print ("Cantidad: ", prescritos["Cantidad"])
                     print ("Dosis: ", prescritos["Dosis"])
