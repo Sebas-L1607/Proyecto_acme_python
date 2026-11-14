@@ -13,7 +13,7 @@ def menu_sistema (usuario_actual):
         print("1. Registrar un operario")
         print ("2. Registrar un paciente")
         print("3. Diagnosticar un paciente")
-        print ("4. Contultar historia clínica")
+        print ("4. Consultar historia clínica")
         print ("5. Cerrar sesión\n")
 
         seleccion = (input())

@@ -7,7 +7,7 @@ def registrar_consulta (lista_pacientes, usuario_actual):
         identificacion_paciente = input("\nDigite el ID del paciente: \n")
         existe = pacientes.buscar_paciente(lista_pacientes,identificacion_paciente)
         if existe is not None:
-            print (existe["Nombre"])
+            print ("Paciente: ", existe["Nombre"]," ", existe["Apellido"])
             while True:
                 sintomas = input("Digite los sintomas del paciente:\n\n").strip()
                 if sintomas == "": 

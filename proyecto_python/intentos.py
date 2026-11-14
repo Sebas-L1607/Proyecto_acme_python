@@ -1,8 +1,8 @@
 import json 
 lugar_pc = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/"
 lugar_pacientes =  lugar_pc + "pacientesguardados.json"
-lugar_operarios = lugar_pc + "operariosguardado.json"
-lugar_consultas = lugar_pc + "consultasguardads.json"
+lugar_operarios = lugar_pc + "operariosguardados.json"
+lugar_consultas = lugar_pc + "consultasguardadas.json"
 
 def guarda_datos (datos, ruta):
     
@@ -12,11 +12,15 @@ def guarda_datos (datos, ruta):
 def cargar (ruta):
     try:
         with open(ruta, "r",encoding="utf-8") as archivo:
-            lista_pacientes = json.load (archivo)
+            datos = json.load (archivo)
         
     except FileNotFoundError:
-        lista_pacientes = []
+        datos = []
 
-    return lista_pacientes    
+    except json.JSONDecodeError:
+        print("El archivo no contiene JSON válido",ruta)
+        raise
+
+    return datos     
 
 

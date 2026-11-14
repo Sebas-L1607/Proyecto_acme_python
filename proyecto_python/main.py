@@ -1,7 +1,7 @@
 import login
 import intentos
 import menu 
-import operarios
+
 
 datos_admin = {
         "Tipo operario" : "Administrador",

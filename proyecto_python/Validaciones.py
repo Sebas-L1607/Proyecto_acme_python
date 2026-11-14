@@ -82,7 +82,7 @@ def validar_telefono_operario ():
 
 def validar_email_operario ():
     while True: 
-        email_operario = input("Digite el email coporativo del operario: ").lower().strip()
+        email_operario = input("Digite el correo corporativo del operario: ").lower().strip()
         conteo = email_operario.count("@")
 
         if email_operario.find(" ") >=0: 

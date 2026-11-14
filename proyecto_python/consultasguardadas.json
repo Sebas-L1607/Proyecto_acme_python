@@ -1,0 +1,1 @@
+[{"Fecha": "13/11/2026", "ID paciente": "800010", "Nombre medico": "Elena Castro", "Email medico": "elena.castro@acmeclinic.com", "Sintomas": "Malestar general desde ayer", "Diagnostico": "Diagnostico A", "Medicamentos": [{"Medicamento": "Medicamento A", "Cantidad": 6, "Dosis": "2", "Dias": 3}, {"Medicamento": "Producto B", "Cantidad": 4, "Dosis": "1s", "Dias": 4}]}]

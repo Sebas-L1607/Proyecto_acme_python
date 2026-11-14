@@ -27,6 +27,7 @@ def mostrar_clinica (lista_pacientes, lista_consultas):
                     print ("Cantidad: ", prescritos["Cantidad"])
                     print ("Dosis: ", prescritos["Dosis"])
                     print ("Dias: ", prescritos["Dias"])
+                    print()
 
         if numero_consultas == 0:
             print ("El paciente no tiene consultas registradas")
