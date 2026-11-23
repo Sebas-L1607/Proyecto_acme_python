@@ -1,8 +1,7 @@
 import Validaciones
 
 
-def crear_paciente():
-    identificacion_paciente = Validaciones.validar_identificacion_paciente ()
+def crear_paciente(identificacion_paciente):
     nombre_paciente = Validaciones.validar_nombre_paciente ()
     apellido_paciente = Validaciones.validar_apellido_paciente ()
     telefono_paciente = Validaciones.validar_telefono_paciente ()
@@ -25,12 +24,15 @@ def crear_paciente():
 
 def registrar_pacientes(lista_pacientes):
 
-    nuevo_paciente = crear_paciente()
-    clave = nuevo_paciente["ID paciente"]
-    if buscar_paciente (lista_pacientes,clave) is None:
-        lista_pacientes.append(nuevo_paciente)
-    else: 
-        print("El paciente ya esta registrado")
+    identificacion_paciente = Validaciones.validar_identificacion_paciente ()
+    validar_id = buscar_paciente(lista_pacientes, identificacion_paciente)
+
+    if paciente_existente is not None:  
+        print("El paciente ya está registrado.")  
+        return lista_pacientes  
+
+    nuevo_paciente = crear_paciente(identificacion_paciente)  
+    lista_pacientes.append(nuevo_paciente)  
     return lista_pacientes
 
 
