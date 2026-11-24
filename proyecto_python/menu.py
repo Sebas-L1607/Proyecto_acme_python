@@ -3,6 +3,7 @@ import intentos
 import operarios
 import consultar
 import historia_clinica
+import asistencia_medico
 
 def menu_sistema (usuario_actual):
     lista_pacientes = intentos.cargar(intentos.lugar_pacientes)
@@ -14,7 +15,8 @@ def menu_sistema (usuario_actual):
         print ("2. Registrar un paciente")
         print("3. Diagnosticar un paciente")
         print ("4. Consultar historia clínica")
-        print ("5. Cerrar sesión\n")
+        print ("5. Consultar Reporte medico")
+        print ("6. Cerrar sesión\n")
 
         seleccion = (input())
 
@@ -32,7 +34,10 @@ def menu_sistema (usuario_actual):
                     intentos.guarda_datos(lista_consultas,intentos.lugar_consultas)
             case "4":
                 historia_clinica.mostrar_clinica(lista_pacientes, lista_consultas)
-            case "5": 
+            case "5":
+                print("reporte medico")
+
+            case "6": 
                 print ("Has cerrado sesión")
                 return
             case _:

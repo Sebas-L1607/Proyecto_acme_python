@@ -3,6 +3,7 @@ lugar_pc = "/Users/sebastianlamus/Documents/Bootcamp/proyecto_python/"
 lugar_pacientes =  lugar_pc + "pacientesguardados.json"
 lugar_operarios = lugar_pc + "operariosguardados.json"
 lugar_consultas = lugar_pc + "consultasguardadas.json"
+lugar_carga_medicos = lugar_pc + "reportecargamedicos.json"
 
 def guarda_datos (datos, ruta):
     
